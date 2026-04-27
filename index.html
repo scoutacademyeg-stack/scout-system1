@@ -1,23 +1,49 @@
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Scout Academy System</title>
+</head>
+
+<body style="font-family: Arial; direction: rtl; background:#f5f5f5; text-align:center; padding:30px;">
+
+<h1 style="color:#b40000;">Scout Academy System</h1>
+
+<div style="background:white; padding:20px; margin:auto; width:320px; border-radius:12px;">
+  <h3>تسجيل الدخول</h3>
+
+  <input id="email" placeholder="Email" style="width:90%; padding:10px; margin:6px;"><br>
+  <input id="password" type="password" placeholder="Password" style="width:90%; padding:10px; margin:6px;"><br>
+
+  <button onclick="login()" style="width:95%; padding:10px; background:#b40000; color:white; border:0;">
+    Login
+  </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 const supabaseUrl = "https://bkqmrqulevjbixnjtviu.supabase.co";
-const supabaseKey = "حط_المفتاح_بتاعك_هنا";
+const supabaseKey = "sb_publishable_EYWN95tniJEA06R16aPnEA_XhKOSKoh";
 
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+const db = supabase.createClient(supabaseUrl, supabaseKey);
 
 async function login() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const { error } = await supabase.auth.signInWithPassword({
-    email,
-    password
+  const { error } = await db.auth.signInWithPassword({
+    email: email,
+    password: password
   });
 
   if (error) {
-    alert(error.message);
+    alert("خطأ: " + error.message);
   } else {
     alert("تم تسجيل الدخول ✅");
   }
 }
 </script>
+
+</body>
+</html>
