@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Scout System</title>
+<style>
+body {
+    font-family: Arial;
+    direction: rtl;
+    background: #f5f5f5;
+    text-align: center;
+}
+h1 {
+    color: red;
+}
+.box {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+}
+input, button {
+    width: 90%;
+    padding: 10px;
+    margin: 5px;
+}
+button {
+    background: red;
+    color: white;
+    border: none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Scout Academy System</h1>
+
+<div class="box">
+<h3>تسجيل دخول</h3>
+<input placeholder="Username">
+<input placeholder="Password" type="password">
+<button>Login</button>
+</div>
+
+<div class="box">
+<h3>إضافة شريك</h3>
+<input placeholder="اسم الشريك">
+<input placeholder="رقم الهاتف">
+<button>حفظ</button>
+</div>
+
+</body>
+</html>
